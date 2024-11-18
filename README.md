@@ -28,3 +28,47 @@ email for building structured email messages
     1) Install the MongoDB 
     2) Install Python 3.x 
     3) Configure your Gmail account to allow App Passwords.
+    
+## Installation
+
+    1) Inorder to execute this code Let's Install pymongo
+
+```bash
+  pip3 install pymongo
+```
+    2. Create a database and collections in MongoDB:
+  - Database: Email_Notification_System
+  - **Collections:**
+  - action_template
+  - notifications: Stores triggered actions for sending emails.
+
+    3) Populate MongoDB collections:
+        
+        You can Insert the Follwing Documents in action_template Collection:
+
+
+    {
+    
+        "action": "password_reset",
+        "subject": "Reset Your Password",
+        "body": "Hello {name},\nYou requested to reset your password. If this was not you,please contact support."
+    }
+
+    {
+    
+        "action": "Log-from-other-dev",
+        "subject": "Logging in from Another Device",
+        "body": "Hello {name},\nYou are trying to Login from Another Device."
+    }
+    
+    Now Insert the following document in the Notifications collection:
+
+
+    {
+        
+        "email" : "receiver's Email",
+        "action" : "password_reset",
+        "data": { "name": "Receiver's name" },
+        "status":"pending"
+    }
+    
