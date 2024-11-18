@@ -45,7 +45,7 @@ email for building structured email messages
 
 3) Populate MongoDB collections:
         
-        You can Insert the Follwing Documents in action_template Collection:
+   You can Insert the Follwing Documents in action_template Collection:
 
 
     {
