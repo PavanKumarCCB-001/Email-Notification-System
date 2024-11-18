@@ -25,3 +25,7 @@ smtplib for sending emails
 
 email for building structured email messages
 
+## Prerequisites
+    1) Install the MongoDB 
+    2) Install Python 3.x 
+    3) Configure your Gmail account to allow App Passwords.
