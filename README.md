@@ -8,7 +8,10 @@ This is a Dynamic Email Notification System developed using Python and MongoDB. 
 4) _Secure Email Sending_:       Uses an App Password for secure email authentication.
    
 **Tech Stack:**
+
+
 -> Programming Language: Python
+
 -> Database: MongoDB
 Libraries:
 pymongo:  For MongoDB integration
