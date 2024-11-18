@@ -24,7 +24,6 @@ pymongo for MongoDB integration
 smtplib for sending emails
 
 email for building structured email messages
-
 ## Prerequisites
     1) Install the MongoDB 
     2) Install Python 3.x 
