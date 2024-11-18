@@ -29,20 +29,21 @@ email for building structured email messages
 2) Install Python 3.x 
 3) Configure your Gmail account to allow App Passwords.
     
+
 ## Installation
 
-    1) Inorder to execute this code Let's Install pymongo
+1) Inorder to execute this code Let's Install pymongo
 
 ```bash
   pip3 install pymongo
 ```
-    2. Create a database and collections in MongoDB:
+2) Create a database and collections in MongoDB:
   - Database: Email_Notification_System
   - **Collections:**
   - action_template
   - notifications: Stores triggered actions for sending emails.
 
-    3) Populate MongoDB collections:
+3) Populate MongoDB collections:
         
         You can Insert the Follwing Documents in action_template Collection:
 
