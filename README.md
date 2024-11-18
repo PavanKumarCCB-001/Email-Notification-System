@@ -10,3 +10,18 @@ This is a Dynamic Email Notification System developed using Python and MongoDB. 
 - _Custom Email Templates:_ Create and manage action-specific email templates.
 
 - _Secure Email Sending:_ Uses an App Password for secure email authentication.
+
+## Tech Stack
+
+**Programming Language :** Python
+
+**Database:** MongoDB
+
+**Libraries Used:**
+
+pymongo for MongoDB integration
+
+smtplib for sending emails
+
+email for building structured email messages
+
