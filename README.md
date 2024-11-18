@@ -15,8 +15,7 @@ This is a Dynamic Email Notification System developed using Python and MongoDB. 
 -> Database: MongoDB
 
 -> Libraries:
+
 pymongo:  For MongoDB integration
-
 smtplib:  For sending emails
-
 email:  for building structured email message
