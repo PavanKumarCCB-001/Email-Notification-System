@@ -10,8 +10,9 @@ templates_collection = db["action_template"]
 notifications_collection = db["notifications"]
 
 # Email credentials
-SENDER_EMAIL = "gunda.pavan.g@gmail.com"
-APP_PASSWORD = "yqvt dcya zqhi gszc"
+SENDER_EMAIL = "Give Sender email"
+APP_PASSWORD = "Give the App generated Password"
+
 
 # Function to send an email using MIMEMultipart
 def send_email(receiver_email, subject, body):
@@ -34,35 +35,40 @@ def send_email(receiver_email, subject, body):
     except Exception as e:
         print(f"Error sending email to {receiver_email}: {e}")
 
+
 # Function to process pending notifications
 def process_notifications():
-    while True:
-        # Find all pending notifications
-        pending_notifications = notifications_collection.find({"status": "pending"})
-        for notification in pending_notifications:
-            action = notification["action"]
-            email = notification["email"]
+    # Find all pending notifications
+    pending_notifications = notifications_collection.find({"status": "pending"})
 
-            # Fetch the template for the action
-            template = templates_collection.find_one({"action": action})
-            if not template:
-                print(f"No template found for action: {action}")
-                continue
+    for notification in pending_notifications:
+        action = notification["action"]
+        email = notification["email"]
 
-            # Format the subject and body with placeholders
-            subject = template["subject"]
-            body = template["body"].format(**notification.get("data", {}))
+        # Fetch the template for the action
+        template = templates_collection.find_one({"action": action})
+        if not template:
+            print(f"No template found for action: {action}")
+            continue
 
-            # Send the email
-            try:
-                send_email(email, subject, body)
+        # Format the subject and body with placeholders
+        subject = template["subject"]
+        body = template["body"].format(**notification.get("data", {}))
 
-                # Update notification status to 'sent'
-                notifications_collection.update_one (
-                    {"_id": notification["_id"]},
-                    {"$set": {"status": "sent"}}   )
-            except Exception as e:
-                print(f"Error sending email: {e}")
+        # Send the email
+        try:
+            send_email(email, subject, body)
+
+            # Update notification status to 'sent'
+            notifications_collection.update_one(
+                {"_id": notification["_id"]},
+                {"$set": {"status": "sent"}}
+            )
+        except Exception as e:
+            print(f"Error sending email: {e}")
+
+    print("All pending notifications have been processed.")
+
 
 # Run the notification processor
 process_notifications()
