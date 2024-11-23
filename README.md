@@ -77,3 +77,4 @@ email for building structured email messages
 
 
 Upon successful execution of the Python script, the status of the notifications in MongoDB will be updated to **"Sent"**.
+![image](https://github.com/user-attachments/assets/7de1b7f2-1b68-4561-bd3f-f88697e4d74e)
