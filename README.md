@@ -73,4 +73,7 @@ email for building structured email messages
         "status":"pending"
     }
 
+## Screenshots
+
+
 Upon successful execution of the Python script, the status of the notifications in MongoDB will be updated to **"Sent"**.
