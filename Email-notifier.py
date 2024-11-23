@@ -10,8 +10,8 @@ templates_collection = db["action_template"]
 notifications_collection = db["notifications"]
 
 # Email credentials
-SENDER_EMAIL = "Give Sender email"
-APP_PASSWORD = "Give the App generated Password"
+SENDER_EMAIL = "gunda.pavan.g@gmail.com"
+APP_PASSWORD = "yqvt dcya zqhi gszc"
 
 
 # Function to send an email using MIMEMultipart
@@ -62,13 +62,9 @@ def process_notifications():
             # Update notification status to 'sent'
             notifications_collection.update_one(
                 {"_id": notification["_id"]},
-                {"$set": {"status": "sent"}}
-            )
+                {"$set": {"status": "sent"}})
         except Exception as e:
             print(f"Error sending email: {e}")
-
-    print("All pending notifications have been processed.")
-
 
 # Run the notification processor
 process_notifications()
