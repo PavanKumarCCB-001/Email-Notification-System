@@ -72,4 +72,5 @@ email for building structured email messages
         "data": { "name": "Receiver's name" },
         "status":"pending"
     }
-    
+
+Upon successful execution of the Python script, the status of the notifications in MongoDB will be updated to **"Sent"**.
